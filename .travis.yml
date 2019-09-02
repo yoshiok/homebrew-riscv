@@ -4,6 +4,7 @@ osx_image: xcode11
 
 script:
   - brew update
+  - ls /usr/local/bin/gcc-*
   - brew tap riscv/riscv
   - travis_wait 60 brew install riscv-tools
   - brew test riscv-tools
