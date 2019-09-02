@@ -4,12 +4,12 @@ osx_image: xcode11
 
 script:
   - brew update
-  - ls /usr/local/bin/gcc-*
+  # - ls /usr/local/bin/gcc-*
   - brew tap riscv/riscv
   - travis_wait 60 brew install riscv-tools
   - brew test riscv-tools
   # now rebuild (instead of from pre-built binaries)
-  - brew reinstall --build-from-source riscv-isa-sim
+  - brew reinstall --build-from-source --cc=gcc-9 riscv-isa-sim
   # avoid timeouts during long gcc build
   # - travis_wait 60 brew reinstall --build-from-source riscv-gcc
   - brew reinstall --build-from-source riscv-pk
