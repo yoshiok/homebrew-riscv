@@ -38,8 +38,8 @@ class RiscvGnuToolchain < Formula
     args = [
       # "--prefix=#{prefix}"
       "--prefix=#{prefix}",
-      "--with-arch=rv32gc",  # skip (d)
-      "--with-abi=ilp32d",
+      "--with-arch=rv32gc",
+      "--with-abi=ilp32d"
       # "--enable-multilib"
     ]
     args << "--enable-multilib" if build.with?("multilib")
