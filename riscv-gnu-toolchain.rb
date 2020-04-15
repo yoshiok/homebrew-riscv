@@ -3,8 +3,8 @@ require "formula"
 class RiscvGnuToolchain < Formula
   homepage "http://riscv.org"
   # url "https://github.com/riscv/riscv-gnu-toolchain.git"
-  url "https://github.com/riscv/riscv-gnu-toolchain.git", :branch => "rvv-0.7.x"
-  version "master"
+  url "https://github.com/riscv/riscv-gnu-toolchain.git", :branch => "rvv-0.7.1"
+  version "rvv-0.7.1"
 
   # bottle do
   # root_url 'http://riscv.org.s3.amazonaws.com/bottles'
