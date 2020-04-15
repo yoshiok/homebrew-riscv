@@ -24,8 +24,19 @@ class RiscvGnuToolchain < Formula
     # disable crazy flag additions
     ENV.delete 'CPATH'
 
+    # The build defaults to targetting RV64GC (64-bit)
+    # Supported architectures are
+    #   rv32i or rv64i plus standard extensions
+    #   (a)tomics, (m)ultiplication and division, (f)loat, (d)ouble, or
+    #   (g)eneral for MAFD.
+    # Supported ABIs are
+    #   ilp32 (32-bit soft-float),
+    #   ilp32d (32-bit hard-float),
+    #   ilp32f (32-bit with single-precision in registers and double in memory, niche use only),
+    #   lp64 lp64f lp64d (same but with 64-bit long and pointers).
     args = [
-      "--prefix=#{prefix}"
+      # "--prefix=#{prefix}"
+      "--prefix=#{prefix} --with-arch=rv32gc --with-abi=ilp32d"
     ]
     args << "--enable-multilib" if build.with?("multilib")
 
