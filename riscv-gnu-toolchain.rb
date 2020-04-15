@@ -3,12 +3,13 @@ require "formula"
 class RiscvGnuToolchain < Formula
   homepage "http://riscv.org"
   url "https://github.com/riscv/riscv-gnu-toolchain.git"
+  head "https://github.com/riscv/riscv-gnu-toolchain.git", :branch => "rvv-0.7.x"
   version "master"
 
-  bottle do
-    root_url 'http://riscv.org.s3.amazonaws.com/bottles'
-    sha256 "ce75cd6eb4220af90ed0587237f167be667fe1cf00b9a1ea02a652a66c33ff32" => :catalina
-  end
+  # bottle do
+  # root_url 'http://riscv.org.s3.amazonaws.com/bottles'
+  # sha256 "ce75cd6eb4220af90ed0587237f167be667fe1cf00b9a1ea02a652a66c33ff32" => :catalina
+  # end
 
   option "with-multilib", "Build with multilib support"
 
