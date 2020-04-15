@@ -30,6 +30,7 @@ class RiscvGnuToolchain < Formula
     #   (a)tomics, (m)ultiplication and division, (f)loat, (d)ouble, or
     #   (g)eneral for MAFD.
     #   C = 16-bit Compressed Instructions ?
+    # M > A > F > D > Q > L > C > B > J > T > P > V > N
     # Supported ABIs are
     #   ilp32 (32-bit soft-float),
     #   ilp32d (32-bit hard-float),
@@ -38,10 +39,11 @@ class RiscvGnuToolchain < Formula
     args = [
       # "--prefix=#{prefix}"
       "--prefix=#{prefix}",
-      #"--with-arch=rv32gc",
-      "--with-arch=rv32imafc",
-      # "--with-abi=ilp32d"     # --with-abi=ilp32d is not supported for ISA rv32imafc
-      "--with-abi=ilp32"
+      "--with-arch=rv32gc",
+      # "--with-arch=rv32imafc",  # pk does not support imafc, use imafdc or imac instead.
+      # "--with-abi=ilp32d"       # --with-abi=ilp32d is not supported for ISA rv32imafc
+      # "--with-abi=ilp32"
+      "--with-abi=ilp32f"
       # "--enable-multilib"
     ]
     args << "--enable-multilib" if build.with?("multilib")
