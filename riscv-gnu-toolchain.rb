@@ -38,7 +38,8 @@ class RiscvGnuToolchain < Formula
     args = [
       # "--prefix=#{prefix}"
       "--prefix=#{prefix}",
-      "--with-arch=rv32gc",
+      #"--with-arch=rv32gc",
+      "--with-arch=rv32imafc",
       "--with-abi=ilp32d"
       # "--enable-multilib"
     ]
