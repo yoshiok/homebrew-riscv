@@ -40,7 +40,8 @@ class RiscvGnuToolchain < Formula
       "--prefix=#{prefix}",
       #"--with-arch=rv32gc",
       "--with-arch=rv32imafc",
-      "--with-abi=ilp32d"
+      # "--with-abi=ilp32d"     # --with-abi=ilp32d is not supported for ISA rv32imafc
+      "--with-abi=ilp32"
       # "--enable-multilib"
     ]
     args << "--enable-multilib" if build.with?("multilib")
