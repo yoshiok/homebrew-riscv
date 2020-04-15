@@ -29,6 +29,7 @@ class RiscvGnuToolchain < Formula
     #   rv32i or rv64i plus standard extensions
     #   (a)tomics, (m)ultiplication and division, (f)loat, (d)ouble, or
     #   (g)eneral for MAFD.
+    #   C = 16-bit Compressed Instructions ?
     # Supported ABIs are
     #   ilp32 (32-bit soft-float),
     #   ilp32d (32-bit hard-float),
@@ -37,7 +38,7 @@ class RiscvGnuToolchain < Formula
     args = [
       # "--prefix=#{prefix}"
       "--prefix=#{prefix}",
-      "--with-arch=rv32gc",
+      "--with-arch=rv32imafc",  # skip (d)
       "--with-abi=ilp32d",
       "--enable-multilib"
     ]
