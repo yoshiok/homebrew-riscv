@@ -36,7 +36,10 @@ class RiscvGnuToolchain < Formula
     #   lp64 lp64f lp64d (same but with 64-bit long and pointers).
     args = [
       # "--prefix=#{prefix}"
-      "--prefix=#{prefix} --with-arch=rv32gc --with-abi=ilp32d"
+      "--prefix=#{prefix}",
+      "--with-arch=rv32gc",
+      "--with-abi=ilp32d",
+      "--enable-multilib"
     ]
     args << "--enable-multilib" if build.with?("multilib")
 
