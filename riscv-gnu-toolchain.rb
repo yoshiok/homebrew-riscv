@@ -39,10 +39,10 @@ class RiscvGnuToolchain < Formula
     args = [
       # "--prefix=#{prefix}"
       "--prefix=#{prefix}",
-      "--with-arch=rv32gc",
-      # "--with-arch=rv32imafc",  # pk does not support imafc, use imafdc or imac instead.
-      # "--with-abi=ilp32d"       # --with-abi=ilp32d is not supported for ISA rv32imafc
-      # "--with-abi=ilp32"
+      # "--with-arch=rv32gc",       # => flen will be 64
+      "--with-arch=rv32imafc",  # => pk does not support imafc, use imafdc or imac instead.
+      # "--with-abi=ilp32d"       # => --with-abi=ilp32d is not supported for ISA rv32imafc
+      # "--with-abi=ilp32"        # => soft float
       "--with-abi=ilp32f"
       # "--enable-multilib"
     ]
