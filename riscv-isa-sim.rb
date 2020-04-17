@@ -20,7 +20,8 @@ class RiscvIsaSim < Formula
 
     mkdir "build"
     cd "build" do
-      system "../configure", "--prefix=#{prefix}"
+      # system "../configure", "--prefix=#{prefix}"
+      system "../configure", "--prefix=#{prefix} --with-fesvr=$RISCV --enable-commitlog=yes"
       system "make", "prefix=#{HOMEBREW_PREFIX}"
       system "make", "install"
     end
